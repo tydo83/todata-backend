@@ -58,10 +58,6 @@ if (typeof namesAndPriorities === 'undefined') {
   namesAndPriorities = undefined;
 }
 
-if (typeof justNotComplete === 'undefined') {
-  justNotComplete = undefined;
-}
-
 if (typeof justComplete === 'undefined') {
   justComplete = undefined;
 }
@@ -74,6 +70,10 @@ if (typeof priority1Only === 'undefined') {
   priority1Only = undefined;
 }
 
+if (typeof justNotComplete === 'undefined') {
+  justNotComplete = undefined;
+}
+
 
 
 module.exports = {
@@ -84,8 +84,8 @@ module.exports = {
   names,
   priorities,
   namesAndPriorities,
-  justNotComplete,
   justComplete,
   priority2Only,
   priority1Only,
+  justNotComplete,
 }

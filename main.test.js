@@ -6,10 +6,10 @@ const {
   names,
   priorities,
   namesAndPriorities,
-  justNotComplete,
   justComplete,
   priority2Only,
   priority1Only,
+  justNotComplete,
 } = require('./main.js')
 
 
@@ -410,115 +410,7 @@ describe('namesAndPriorities', () => {
   });
 });
 
-describe('justNotComplete', () => {
-  it(`returns an array of only those todos that are not complete`, () => {
-    const todos = [
-      {
-        text: 'Christmas shopping',
-        id: 0,
-        complete: false,
-        priority: 1,
-      },
-      {
-        text: `make doctor's appointment`,
-        id: 1,
-        complete: true,
-        priority: 2,
-      },
-      {
-        text: 'binge watch The Office',
-        id: 2,
-        complete: false,
-        priority: 2,
-      },
-      {
-        text: 'research dinosaurs',
-        id: 3,
-        complete: false,
-        priority: 1,
-      },
-      {
-        text: 'fire Colin',
-        id: 4,
-        complete: true,
-        priority: 2,
-      },
-      {
-        text: 'start novel',
-        id: 5,
-        complete: true,
-        priority: 1,
-      },
-    ]
 
-    const notComplete = [
-      {
-        text: 'Christmas shopping',
-        id: 0,
-        complete: false,
-        priority: 1,
-      },
-      {
-        text: 'binge watch The Office',
-        id: 2,
-        complete: false,
-        priority: 2,
-      },
-      {
-        text: 'research dinosaurs',
-        id: 3,
-        complete: false,
-        priority: 1,
-      },
-    ];
-
-    expect(justNotComplete(todos)).toEqual(notComplete);
-  })
-
-  it(`doesn't modify the original array`, () => {
-    const todos = [
-      {
-        text: 'Christmas shopping',
-        id: 0,
-        complete: false,
-        priority: 1,
-      },
-      {
-        text: `make doctor's appointment`,
-        id: 1,
-        complete: true,
-        priority: 2,
-      },
-      {
-        text: 'binge watch The Office',
-        id: 2,
-        complete: false,
-        priority: 2,
-      },
-      {
-        text: 'research dinosaurs',
-        id: 3,
-        complete: false,
-        priority: 1,
-      },
-      {
-        text: 'fire Colin',
-        id: 4,
-        complete: true,
-        priority: 2,
-      },
-      {
-        text: 'start novel',
-        id: 5,
-        complete: true,
-        priority: 1,
-      },
-    ]
-
-    justNotComplete(todos);
-    expect(todos).toEqual(originalTodos);
-  });
-})
 
 describe('justComplete', () => {
   it(`returns an array of only those todos that are not complete`, () => {
@@ -846,6 +738,115 @@ describe('priority1Only', () => {
     ]
 
     priority1Only(todos);
+    expect(todos).toEqual(originalTodos);
+  });
+})
+describe('justNotComplete', () => {
+  it(`returns an array of only those todos that are not complete`, () => {
+    const todos = [
+      {
+        text: 'Christmas shopping',
+        id: 0,
+        complete: false,
+        priority: 1,
+      },
+      {
+        text: `make doctor's appointment`,
+        id: 1,
+        complete: true,
+        priority: 2,
+      },
+      {
+        text: 'binge watch The Office',
+        id: 2,
+        complete: false,
+        priority: 2,
+      },
+      {
+        text: 'research dinosaurs',
+        id: 3,
+        complete: false,
+        priority: 1,
+      },
+      {
+        text: 'fire Colin',
+        id: 4,
+        complete: true,
+        priority: 2,
+      },
+      {
+        text: 'start novel',
+        id: 5,
+        complete: true,
+        priority: 1,
+      },
+    ]
+
+    const notComplete = [
+      {
+        text: 'Christmas shopping',
+        id: 0,
+        complete: false,
+        priority: 1,
+      },
+      {
+        text: 'binge watch The Office',
+        id: 2,
+        complete: false,
+        priority: 2,
+      },
+      {
+        text: 'research dinosaurs',
+        id: 3,
+        complete: false,
+        priority: 1,
+      },
+    ];
+
+    expect(justNotComplete(todos)).toEqual(notComplete);
+  })
+
+  it(`doesn't modify the original array`, () => {
+    const todos = [
+      {
+        text: 'Christmas shopping',
+        id: 0,
+        complete: false,
+        priority: 1,
+      },
+      {
+        text: `make doctor's appointment`,
+        id: 1,
+        complete: true,
+        priority: 2,
+      },
+      {
+        text: 'binge watch The Office',
+        id: 2,
+        complete: false,
+        priority: 2,
+      },
+      {
+        text: 'research dinosaurs',
+        id: 3,
+        complete: false,
+        priority: 1,
+      },
+      {
+        text: 'fire Colin',
+        id: 4,
+        complete: true,
+        priority: 2,
+      },
+      {
+        text: 'start novel',
+        id: 5,
+        complete: true,
+        priority: 1,
+      },
+    ]
+
+    justNotComplete(todos);
     expect(todos).toEqual(originalTodos);
   });
 })
