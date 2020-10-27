@@ -56,14 +56,12 @@ describe('getTodoName', () => {
   it(`returns the text property of a todo`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-
     complete: false,
     priority: 2,
   };
@@ -77,7 +75,6 @@ describe('getPriority', () => {
   it(`returns the priority of a todo`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-
     complete: false,
     priority: 1,
   };
@@ -98,14 +95,12 @@ describe('isComplete', () => {
   it(`returns whether the given todo is complete`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-
     complete: false,
     priority: 1,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-
     complete: true,
     priority: 2,
   };
@@ -119,14 +114,12 @@ describe('isHighPriority', () => {
   it(`returns whether the given todo is of high priority`, () => {
     const todo1 = {
     text: 'Christmas shopping',
-
     complete: false,
     priority: 2,
   };
 
   const todo2 = {
     text: `make doctor's appointment`,
-
     complete: true,
     priority: 1,
   };
