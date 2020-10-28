@@ -1,32 +1,66 @@
 /********************
  * HELPER FUNCTIONS *
  ********************/
+const getTodoName = function(toDolist) {
+  return toDolist.text;
+}
 
+const getPriority = function(toDolist) {
+  return toDolist.priority;
+}
 
+const isComplete = function(toDolist) {
+  return toDolist.complete;
+}
 
+const isHighPriority = function(toDolist) {
+  return toDolist.priority === 2;
+}
 
+const getNamesAndPriorities = function(toDolist) {
+  let highAndLow = toDolist.priority == 2 ? 'High' : 'Low'; 
+  return `${toDolist.text} - ${highAndLow}`;
+}
 
+const priority1OnlyHelper = function(toDolist) {
+  return toDolist.priority === 1;
+}
 
-
-
-
+const justNotCompleteHelper = function(toDolist) {
+  return !toDolist.complete;
+}
 
 /***********************
  * ITERATION FUNCTIONS *
  ***********************/
 
+const names = function(toDolist) {
+  return toDolist.map(getTodoName);  
+}
 
+const priorities = function(toDolist) {
+  return toDolist.map(getPriority);
+}
 
+const namesAndPriorities = function(toDolist) {
+  return toDolist.map(getNamesAndPriorities);
+}
 
+const justComplete = function(toDolist) {
+  return toDolist.filter(isComplete);
+}
 
+const priority2Only = function(toDolist) {
+  return toDolist.filter(isHighPriority);
+}
 
+const priority1Only = function(toDolist) {
+  return toDolist.filter(priority1OnlyHelper);
+}
 
-
-
-
-
-
-
+const justNotComplete = function(toDolist) {
+  return toDolist.filter(justNotCompleteHelper);
+}
 
 // Our code below
 
